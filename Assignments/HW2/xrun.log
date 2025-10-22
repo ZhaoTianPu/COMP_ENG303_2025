@@ -48,4 +48,6 @@ A=15 (1111)  B=1 (0001)  CIN=0 -> COUT=1, S=0000, {COUT, S}=16
 All tests completed.
 Simulation complete via $finish(1) at time 5 NS + 0
 ./Q4_tb_full_adder.v:33     $finish;
-xcelium> 
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	18.09-s011: Exiting on Oct 21, 2025 at 21:45:27 CDT  (total: 00:01:49)
