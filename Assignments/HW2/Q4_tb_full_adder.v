@@ -1,17 +1,20 @@
 `timescale 1ns/1ps
 module tb_ripple_adder4;
-  logic [3:0] A, B;
-  logic       CIN;
-  logic [3:0] S;
-  logic       COUT;
+  reg [3:0] A, B;
+  reg CIN;
+  wire [3:0] S;
+  wire COUT;
 
   ripple_adder4 dut (.A(A), .B(B), .CIN(CIN), .S(S), .COUT(COUT));
 
-  task automatic run_vec(input [3:0] a, b, input cin);
-    A = a; B = b; CIN = cin;
-    #1;
-    $display("A=%0d (%b)  B=%0d (%b)  CIN=%0d -> COUT=%0b, S=%04b, {COUT, S}=%0d",
-      a, a, b, b, cin, COUT, S, {COUT, S});
+  task run_vec;
+    input [3:0] a, b, cin;
+    begin
+      A = a; B = b; CIN = cin;
+      #1;
+      $display("A=%0d (%b)  B=%0d (%b)  CIN=%0d -> COUT=%0b, S=%04b, {COUT, S}=%0d",
+        a, a, b, b, cin, COUT, S, {COUT, S});
+    end
   endtask
 
   initial begin

@@ -5,6 +5,8 @@ module tb;
   reg  A0, A1, A2;
   // DUT output signals
   wire Y0, Y1, Y2, Y3;
+  // index for loop
+  integer i;
 
   // DUT
   dec_2_to_4_output_pol_ctrl dut (
@@ -18,7 +20,7 @@ module tb;
     $display("-----------------------");
 
     // create all combinations for the input
-    for (integer i = 0; i < 8; i = i + 1) 
+    for (i = 0; i < 8; i = i + 1) 
       begin
           {A2, A1, A0} = i[2:0];
           #1; // wait 1ns
