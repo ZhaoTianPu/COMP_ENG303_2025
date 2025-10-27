@@ -5,16 +5,6 @@ module tb_multiplier_3x3;
   integer i;
   multiplier_3x3 dut (.A(A), .B(B), .P(P));
 
-  task run_vec;
-    input [2:0] a, b;
-    begin
-      A = a; B = b;
-      #1;
-      $display("A=%0d (%b)  B=%0d (%b)  -> P=%0d (%b)",
-        a, a, b, b, P, P);
-    end
-  endtask
-
   initial begin
     $display("---- 3-bit Multiplier Test ----");
 
