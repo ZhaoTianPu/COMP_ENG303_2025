@@ -1,0 +1,57 @@
+xrun(64): 18.09-s011: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	18.09-s011: Started on Oct 28, 2025 at 18:37:22 CDT
+xrun
+	-64bit
+	-gui
+	-access r
+	Q4_barrel.v
+	Q4_tb_barrel.v
+file: Q4_barrel.v
+	module worklib.Vrbarrel16:v
+		errors: 0, warnings: 0
+file: Q4_tb_barrel.v
+	module worklib.tb_barrel:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_barrel
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Vrbarrel16:v <0x24b22c55>
+			streams:   7, words:  6860
+		worklib.tb_barrel:v <0x675af911>
+			streams:   4, words:  5225
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              41      41
+		Vectored wires:          4       -
+		Always blocks:           1       1
+		Initial blocks:          1       1
+		Pseudo assignments:      3       3
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_barrel:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /vol/cadence2018/XCELIUM1809/tools/xcelium/files/xmsimrc
+xcelium> run
+---- 16-bit Barrel Shifter Test ----
+DIN = 1001011101010011
+S = 3 (0011)
+C=000  -> DOUT=1011101010011100
+C=001  -> DOUT=0111001011101010
+C=010  -> DOUT=1011101010011000
+C=011  -> DOUT=0001001011101010
+C=100  -> DOUT=1011101010011000
+C=101  -> DOUT=1111001011101010
+All tests completed.
+Simulation complete via $finish(1) at time 8 NS + 0
+./Q4_tb_barrel.v:32     $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	18.09-s011: Exiting on Oct 28, 2025 at 18:38:40 CDT  (total: 00:01:18)

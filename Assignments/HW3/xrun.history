@@ -1,0 +1,2 @@
+s1(28Oct2025:18:35:24):  xrun -64bit -gui -access r Q3_multiplier.v Q3_tb_multiplier.v 
+s2(28Oct2025:18:37:22):  xrun -64bit -gui -access r Q4_barrel.v Q4_tb_barrel.v 
