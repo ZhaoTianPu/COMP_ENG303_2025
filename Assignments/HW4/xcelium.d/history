@@ -1,0 +1,14 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(30Oct2025:11:28:03):( xrun -64bit -gui -access r Q1_ALU.v Q1_tb_ALU.v )
+s2::(30Oct2025:11:29:03):( xrun -64bit -gui -access r Q1_ALU.v Q1_tb_ALU.v )
+s3::(30Oct2025:11:36:56):( xrun -64bit -gui -access r Q1_ALU.v Q1_tb_ALU.v )
+s4::(30Oct2025:14:37:13):( xrun -64bit -gui -access r Q1_ALU_syn.v Q1_tb_ALU_syn.v )
+s5::(30Oct2025:14:37:25):( xrun -64bit -gui -access r Q1_ALU_syn.v Q1_tb_ALU.v )
+s6::(30Oct2025:14:39:27):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./Synthesis/Q1_ALU_syn.v Q1_tb_ALU.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s7::(30Oct2025:14:39:49):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./Synthesis/Q1_ALU_syn.v Q1_tb_ALU.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s8::(30Oct2025:14:39:56):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./synthesis/Q1_ALU_syn.v Q1_tb_ALU.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s9::(30Oct2025:14:40:45):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./synthesis/Q1_ALU_syn.v Q1_tb_ALU.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s10::(30Oct2025:14:40:56):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./synthesis/Q1_ALU_syn.v Q1_tb_ALU.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )

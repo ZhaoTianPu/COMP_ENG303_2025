@@ -1,0 +1,13 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-gui
+-access
+r
+-xmelab_args
+"-warnmax 0 -delay_mode zero -maxdelays"
+./synthesis/Q1_ALU_syn.v
+Q1_tb_ALU.v
+/vol/ece303/genus_tutorial/NangateOpenCellLibrary.v
