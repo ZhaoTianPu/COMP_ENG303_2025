@@ -9,6 +9,7 @@
 // F=110: Q=arithmetic left  shift a by 1  (<<1; LSB=0)
 // F=111: Q=arithmetic right shift a by 1  (>>1; MSB holds sign bit a[7])
 //============================================================
+`timescale 1ns/1ps
 module alu8 (
     input  wire [7:0] a,
     input  wire [7:0] b,
