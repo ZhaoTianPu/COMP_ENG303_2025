@@ -1,30 +1,66 @@
-`timescale 1ns/1ps
-module full_adder (
-  input  A,
-  input  B,
-  input  CIN,
-  output S,
-  output COUT
+//============================================================
+// 8-bit ALU (unsigned inputs), F[2:0] selects operation
+// F=000: Q=a+b              (Cout = carry-out)
+// F=001: Q=a-b              (Cout = borrow   ; 1 if a<b, else 0)
+// F=010: Q=a OR  b
+// F=011: Q=a AND b
+// F=100: Q=a XOR b
+// F=101: Q=NOT a
+// F=110: Q=arithmetic left  shift a by 1  (<<1; LSB=0)
+// F=111: Q=arithmetic right shift a by 1  (>>1; MSB holds sign bit a[7])
+//============================================================
+module alu8 (
+    input  wire [7:0] a,
+    input  wire [7:0] b,
+    input  wire [2:0] F,
+    output reg  [7:0] Q,
+    output reg        Cout // carry-out for add, borrow for sub
 );
-  assign S    = A ^ B ^ CIN;
-  assign COUT = (A & B) | (A & CIN) | (B & CIN);
-endmodule
+    // Internal 9-bit adders for proper carry/borrow handling
+    wire [8:0] add9 = {1'b0, a} + {1'b0, b};
+    wire [8:0] sub9 = {1'b0, a} + {1'b0, ~b} + 9'b000000001; 
 
-module ripple_adder4 (
-  input  [3:0] A,
-  input  [3:0] B,
-  input  CIN,
-  output [3:0] S,
-  output COUT
-);
-  wire C1, C2, C3;
+    always @* begin
+        Q    = 8'h00;
+        Cout = 1'b0;
 
-  assign S[0] = A[0] ^ B[0] ^ CIN;
-  assign C1 = (A[0] & B[0]) | (A[0] & CIN) | (B[0] & CIN);
-  assign S[1] = A[1] ^ B[1] ^ C1;
-  assign C2 = (A[1] & B[1]) | (A[1] & C1) | (B[1] & C1);
-  assign S[2] = A[2] ^ B[2] ^ C2;
-  assign C3 = (A[2] & B[2]) | (A[2] & C2) | (B[2] & C2);
-  assign S[3] = A[3] ^ B[3] ^ C3;
-  assign COUT = (A[3] & B[3]) | (A[3] & C3) | (B[3] & C3);
+        case (F)
+            3'b000: begin // a + b
+                Q    = add9[7:0];
+                Cout = add9[8]; // true carry-out
+            end
+            3'b001: begin // a - b
+                Q    = sub9[7:0];
+                Cout = ~sub9[8]; // borrow = NOT(carry-out of a + ~b + 1)
+            end
+            3'b010: begin // a OR b
+                Q    = a | b;
+                Cout = 1'b0;
+            end
+            3'b011: begin // a AND b
+                Q    = a & b;
+                Cout = 1'b0;
+            end
+            3'b100: begin // a XOR b
+                Q    = a ^ b;
+                Cout = 1'b0;
+            end
+            3'b101: begin // NOT a
+                Q    = ~a;
+                Cout = 1'b0;
+            end
+            3'b110: begin // arithmetic left shift by 1 (same as logical for 2's comp)
+                Q    = {a[6:0], 1'b0};
+                Cout = 1'b0;
+            end
+            3'b111: begin // arithmetic right shift by 1 (preserve sign bit)
+                Q    = {a[7], a[7:1]};
+                Cout = 1'b0;
+            end
+            default: begin
+                Q    = 8'h00;
+                Cout = 1'b0;
+            end
+        endcase
+    end
 endmodule

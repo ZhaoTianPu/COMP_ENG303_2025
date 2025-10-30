@@ -1,3 +1,4 @@
+// Q3_multiplier.v
 `timescale 1ns/1ps
 module multiplier_3x3 (
   input  [2:0] A,
