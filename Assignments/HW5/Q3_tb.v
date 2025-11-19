@@ -19,7 +19,7 @@ module tb_button_sync;
 
     initial begin
 
-        clk = 0;
+        clk = 1;
         bi = 0;
         rst = 0;
 		$display("cycle 0: bi = %d, bo = %d", bi, bo);

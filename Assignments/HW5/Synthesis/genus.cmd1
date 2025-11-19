@@ -5,3 +5,15 @@
 # OS:   Red Hat Enterprise Linux release 8.10 (Ootpa)
 
 read_hdl ../Q1.v
+set_db library /vol/ece303/genus_tutorial/NangateOpenCellLibrary_typical.lib
+set_db lef_library /vol/ece303/genus_tutorial/NangateOpenCellLibrary.lef
+elaborate
+current_design Q1
+read_sdc ../Q1_sdc.sdc
+syn_generic
+syn_map
+syn_opt
+report_timing > timing.rpt
+report_area > area.rpt
+write_hdl > Q1_syn.v
+quit

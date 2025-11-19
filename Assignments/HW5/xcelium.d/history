@@ -4,3 +4,8 @@
 
 s1::(18Nov2025:20:32:17):( xrun -64bit -gui -access r Q1.v Q1_tb.v )
 s2::(18Nov2025:20:40:54):( xrun -64bit -gui -access r Q1.v Q1_tb.v )
+s3::(18Nov2025:20:54:59):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./Synthesis/Q1_syn.v Q1_tb.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s4::(18Nov2025:20:55:29):( xrun -64bit -gui -access r -xmelab_args "-warnmax 0 -delay_mode zero -maxdelays" ./Synthesis/Q1_syn.v Q1_tb.v /vol/ece303/genus_tutorial/NangateOpenCellLibrary.v )
+s5::(18Nov2025:20:57:31):( xrun -64bit -gui -access r Q3.v Q3_tb.v )
+s6::(18Nov2025:20:57:51):( xrun -64bit -gui -access r Q3.v Q3_tb.v )
+s7::(18Nov2025:21:00:00):( xrun -64bit -gui -access r Q3.v Q3_tb.v )

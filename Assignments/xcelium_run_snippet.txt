@@ -8,7 +8,8 @@ xrun -64bit -gui -access r Q4_full_adder.v Q4_tb_full_adder.v
 cd Synthesis
 genus
 read_hdl ../alu_conv.v
-set_db library /vol/ece303/genus_tutorial/NangateOpenCellLibrary_typical.lib set_db lef_library /vol/ece303/genus_tutorial/NangateOpenCellLibrary.lef
+set_db library /vol/ece303/genus_tutorial/NangateOpenCellLibrary_typical.lib 
+set_db lef_library /vol/ece303/genus_tutorial/NangateOpenCellLibrary.lef
 elaborate 
 current_design alu_conv
 read_sdc ../alu_conv.sdc

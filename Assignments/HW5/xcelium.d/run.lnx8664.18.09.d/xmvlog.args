@@ -5,8 +5,8 @@
 -XLMODE
 ./xcelium.d/run.lnx8664.18.09.d
 -RUNMODE
-Q1.v
-Q1_tb.v
+Q3.v
+Q3_tb.v
 -CDSLIB
 ./xcelium.d/run.lnx8664.18.09.d/cdsrun.lib
 -HDLVAR
