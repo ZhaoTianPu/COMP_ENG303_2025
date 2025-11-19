@@ -1,0 +1,70 @@
+xrun(64): 18.09-s011: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	18.09-s011: Started on Nov 18, 2025 at 20:40:54 CST
+xrun
+	-64bit
+	-gui
+	-access r
+	Q1.v
+	Q1_tb.v
+Recompiling... reason: file './Q1_tb.v' is newer than expected.
+	expected: Tue Nov 18 20:30:28 2025
+	actual:   Tue Nov 18 20:40:51 2025
+file: Q1_tb.v
+	module worklib.tb_mac:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_mac
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tb_mac:v <0x3a32a7d4>
+			streams:   4, words:  3686
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               9       9
+		Scalar wires:            2       -
+		Vectored wires:          3       -
+		Always blocks:           3       3
+		Initial blocks:          1       1
+		Pseudo assignments:      2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_mac:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /vol/cadence2018/XCELIUM1809/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_mac.IN tb_mac.OUT tb_mac.W tb_mac.clk tb_mac.i tb_mac.rstb
+Created probe 1
+xcelium> run
+IN =   0, W =   5, OUT =     0
+IN =   5, W =   7, OUT =     0
+IN =   1, W =   1, OUT =     0
+IN =  -7, W =   6, OUT =     0
+IN =  -3, W =   1, OUT =     0
+IN =   2, W =   1, OUT =     0
+IN =   1, W =   0, OUT =     0
+IN =  -3, W =  -6, OUT =     0
+IN =  -7, W =   6, OUT =    11
+IN =   1, W =  -5, OUT =    11
+IN =   6, W =   3, OUT =    11
+IN =  -2, W =  -6, OUT =    11
+IN =  -4, W =  -7, OUT =    11
+IN =   0, W =  -7, OUT =    11
+IN =  -7, W =  -7, OUT =    11
+IN =   7, W =  -2, OUT =    11
+IN =  -4, W =  -4, OUT =    11
+IN =  -2, W =  -7, OUT =    62
+IN =  -6, W =   7, OUT =    62
+IN =  -7, W =   7, OUT =    62
+Simulation complete via $finish(1) at time 30 NS + 0
+./Q1_tb.v:40         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	18.09-s011: Exiting on Nov 18, 2025 at 20:47:34 CST  (total: 00:06:40)

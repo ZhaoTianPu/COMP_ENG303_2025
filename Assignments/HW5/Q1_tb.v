@@ -22,7 +22,7 @@ module tb_mac;
     integer i;
     initial begin
 
-        clk = 0;
+        clk = 1;
         rstb = 0;
         IN = 0;
         W = 0;
