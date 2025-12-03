@@ -22,10 +22,11 @@ module Vr3bitctrdecMod ( CLK, CLR, S_L );
     reg [2:0] Q;
     integer i;
 
-    always @ (posedge CLK) 
+    always @ (posedge CLK) begin
         if (CLR) Q <= 3'd0;
         else Q <= Q+1;
         S_L = 8'b11111111;
         for (i=0; i<=7; i=i+1)
             if (i == Q) S_L[i] = 0;
+    end
 endmodule
