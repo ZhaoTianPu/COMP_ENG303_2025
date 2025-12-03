@@ -1,11 +1,9 @@
 `timescale 1ns/1ps
-module Vredge (
-    input  wire clk,
-    input  wire rst,
-    input  wire X,
-    output reg  EDGE
-);
-
+module Vredge (clk, rst, X, EDGE);
+    input  wire clk;
+    input  wire rst;
+    input  wire X;
+    output  EDGE;
     localparam A_00 = 2'b00; // state A: two 0s
     localparam B_01 = 2'b01; // state B: one 0, one 1
     localparam C_10 = 2'b10; // state C: one 1, one 0

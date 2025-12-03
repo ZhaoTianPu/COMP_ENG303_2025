@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 module Vr3bitctrdec ( CLK, CLR, S_L );
-    input CLK, CLR, S_L;
-    output reg [0:7] S_L;
+    input CLK, CLR;
+    output reg [7:0] S_L;
     reg [2:0] Q;
     integer i;
 
@@ -17,8 +17,8 @@ module Vr3bitctrdec ( CLK, CLR, S_L );
 endmodule
 
 module Vr3bitctrdecMod ( CLK, CLR, S_L );
-    input CLK, CLR, S_L;
-    output reg [0:7] S_L;
+    input CLK, CLR;
+    output reg [7:0] S_L;
     reg [2:0] Q;
     integer i;
 
