@@ -55,4 +55,6 @@ cycle 4.5: bi = 0, bo = 0
 cycle 5: bi = 0, bo = 0
 Simulation complete via $finish(1) at time 5 NS + 0
 ./Q3_tb.v:57         $finish;
-xcelium> 
+xcelium> ...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	18.09-s011: Exiting on Nov 18, 2025 at 21:01:50 CST  (total: 00:01:50)
